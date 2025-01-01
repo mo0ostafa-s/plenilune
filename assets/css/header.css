@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8bc03;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffce00;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 350px;
+  height: 100%;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 999999999;
+  background-color: #333;
+  transition: 1s ease 2s;
+  transition-property: transform box-shadow;
+}
+
+header.closed {
+  left: 100%;
+}
+
+header.open {
+  transform: translateX(-100%);
+  box-shadow: -5px 0 20px #333;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  height: 50px;
+  animation-name: rotating-plenilune;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+@keyframes rotating-plenilune {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+header .logo h1 {
+  font-size: 40px;
+}
+
+header .logo h1 a {
+  color: #e8bc03;
+}
+
+header .logo h1 a:hover {
+  color: #ffce00;
+}
+
+header nav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+header nav ul li {
+  position: relative;
+  margin-right: 20px;
+}
+
+header nav ul li::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(50%, -50%);
+  background-image: url("../imgs/logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header nav ul li + li {
+  margin-top: 10px;
+}
+
+header nav ul li a {
+  color: white;
+  display: block;
+  padding: 10px 0;
+}
+
+header nav ul li a:hover {
+  color: #ffce00;
+}
+
+#ctaBtn {
+  padding: 20px 30px;
+  border: 0;
+  border-radius: 25px;
+  color: #333;
+  background-color: #e8bc03;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#ctaBtn:hover {
+  background-color: #ffce00;
+  cursor: pointer;
+}

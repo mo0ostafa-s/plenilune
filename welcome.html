@@ -1,11 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plenilune | surprises</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The most creative 95 presents I have in my mind to my plenilune">
+  <meta name="author" content="Moustafa Yasser">
+  <link rel="shortcut icon" href="./assets/imgs/favicon.ico" type="image/x-icon">
+  <title>Plenilune | Home</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <!-- fontawesome icons -->
+  <link rel="stylesheet" href="./assets/css/all.min.css">
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="./assets/css/header.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
+  <link rel="stylesheet" href="./assets/css/flip.min.css">
+  <link rel="stylesheet" href="./assets/css/counter.css">
 </head>
+
 <body>
-  the code is under implementation...
+  <!-- start header -->
+  <header class="closed">
+    <div class="logo">
+      <h1><a href="./welcome.html">Plenilune</a></h1>
+      <img src="./assets/imgs/logo.png" alt>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">لسه مخلصناش تعالي بكره</a></li>
+        <li><a href="#">لسه مخلصناش تعالي بكره</a></li>
+        <li><a href="#">لسه مخلصناش تعالي بكره</a></li>
+        <li><a href="#">لسه مخلصناش تعالي بكره</a></li>
+      </ul>
+    </nav>
+    <button id="ctaBtn">اقفل البتاعة دي</button>
+    <button id="openMenu"></button>
+  </header>
+  <!-- end header -->
+  
+
+  <main>
+    <!-- start hero section -->
+    <section class="hero">
+      <div class="counter">
+        <div class="tick" data-did-init="handleTickInit" dir="ltr">
+          <div data-repeat="true" data-layout="horizontal fit" data-transform="preset(d, h, m, s) -> delay">
+            <div class="tick-group">
+              <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+                <span data-view="flip"></span>
+              </div>
+              <!-- <span data-key="label" data-view="text" class="tick-label"></span> -->
+            </div>
+          </div>
+        </div>
+        <div class="tick-onended-message" style="display: none">
+          <p>Holiday</p>
+        </div>
+      </div>
+      <div class="floating-icon">
+        <i class="fa-solid fa-angles-down fa-2x"></i>
+      </div>
+    </section>
+    <!-- end hero section -->
+    
+    <!-- start  section -->
+    <section class="" style="text-align: center;">
+      <img src="./assets/imgs/logo.png" alt="" style="max-width: 100%;">
+      <h2 style="margin-top: 20px;">لسه مخلصناش هنكمل ان شاء الله قريب جدا</h2>
+    </section>
+    <!-- end  section -->
+  </main>
+
+
+  <!-- start scripts -->
+  <script src="./assets/js/all.min.js"></script>
+  <script src="./assets/js/counter.js"></script>
+  <script src="./assets/js/flip.min.js"></script>
+  <script src="./assets/js/buttons.js"></script>
 </body>
+
 </html>
