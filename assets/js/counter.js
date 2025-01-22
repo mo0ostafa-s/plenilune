@@ -6,7 +6,8 @@ function handleTickInit(tick) {
   };
 
   counter.onended = function () {
-    tick.root.style.display = 'none';
-    document.querySelector('.tick-onended-message').style.display = 'block';
+    // tick.root.style.display = 'none';
+    // document.querySelector('.tick-onended-message').style.display = 'block';
+
   };
 }
