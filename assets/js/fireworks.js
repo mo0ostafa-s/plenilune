@@ -1,3 +1,22 @@
+const fireworksAudio = document.querySelector('#fireworksAudio');
+const playFireworksBtn = document.querySelector('#playFireworksBtn');
+const muteFireworksBtn = document.querySelector('#muteFireworksBtn');
+
+playFireworksBtn.style.display = 'block';
+muteFireworksBtn.style.display = 'none';
+
+playFireworksBtn.addEventListener('click', () => {
+  playFireworksBtn.style.display = 'none';
+  muteFireworksBtn.style.display = 'block';
+  fireworksAudio.play();
+});
+
+muteFireworksBtn.addEventListener('click', () => {
+  muteFireworksBtn.style.display = 'none';
+  playFireworksBtn.style.display = 'block';
+  fireworksAudio.pause();
+});
+
 var c = document.getElementById("Canvas");
 var ctx = c.getContext("2d");
 

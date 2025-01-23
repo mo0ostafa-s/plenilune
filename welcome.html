@@ -46,7 +46,16 @@
   <main>
     <!-- start hero section -->
     <section class="hero">
+      <!-- start fireworks -->
       <canvas id="Canvas"></canvas>
+      <audio src="./assets/audios/fireworks.mp3" id="fireworksAudio" loop style="display:none;"></audio>
+      <button id="playFireworksBtn">
+        <i class="fa-solid fa-volume-high fa-2x" id="audioIconPlay"></i>
+      </button>
+      <button id="muteFireworksBtn">
+        <i class="fa-solid fa-volume-xmark fa-2x" id="audioIconMuted"></i>
+      </button>
+      <!-- end fireworks -->
       <div class="counter">
         <div class="tick" data-did-init="handleTickInit" dir="ltr">
           <div data-repeat="true" data-layout="horizontal fit" data-transform="preset(d, h, m, s) -> delay">

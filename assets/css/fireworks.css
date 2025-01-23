@@ -1,3 +1,19 @@
+#playFireworksBtn, #muteFireworksBtn {
+    position: fixed;
+    width: 4em;
+    height: 4em;
+    bottom: 2.5em;
+    left: 2.5em;
+    background-position: center;
+    background-color: white;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    z-index: 99999999;
+    color: #e8bc03;
+}
+
 canvas {
     position: absolute;
     top: 0;
