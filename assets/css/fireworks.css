@@ -1,5 +1,5 @@
 #playFireworksBtn, #muteFireworksBtn {
-    position: fixed;
+    position: absolute;
     width: 4em;
     height: 4em;
     bottom: 2.5em;
