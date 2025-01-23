@@ -61,7 +61,8 @@
 }
 
 .tick-label {
-  color: #333 !important;
+  color: #ffce00 !important;
+  font-weight: bolder;
 }
 
 .tick-flip-panel {

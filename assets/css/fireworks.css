@@ -1,3 +1,47 @@
+button {
+    cursor: pointer;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+    position: relative;
+    opacity: 0.5;
+}
+
+button[disabled]::before, button[disabled]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background-color: #f00;
+}
+
+button[disabled]::before {
+    transform: translate(-50%, -50%) skewX(45deg) scale(1.25);
+}
+
+button[disabled]::after {
+    transform: translate(-50%, -50%) skewX(-45deg) scale(1.25);
+}
+
+#startFireworksBtn, #stopFireworksBtn {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-position: center;
+    background-color: #e8bc03;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    z-index: 88888888;
+    color: #333;
+    font-weight: bolder;
+}
+
 #playFireworksBtn, #muteFireworksBtn {
     position: absolute;
     width: 4em;
@@ -5,13 +49,12 @@
     bottom: 2.5em;
     left: 2.5em;
     background-position: center;
-    background-color: white;
+    background-color: #e8bc03;
     border-radius: 50%;
     border: 0;
     outline: 0;
-    cursor: pointer;
-    z-index: 99999999;
-    color: #e8bc03;
+    z-index: 88888888;
+    color: #333;
 }
 
 canvas {

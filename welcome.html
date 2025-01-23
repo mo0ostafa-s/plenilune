@@ -48,6 +48,8 @@
     <section class="hero">
       <!-- start fireworks -->
       <canvas id="Canvas"></canvas>
+      <button id="startFireworksBtn">ابدأ الحفلة</button>
+      <button id="stopFireworksBtn">كفاية احتفالات</button>
       <audio src="./assets/audios/fireworks.mp3" id="fireworksAudio" loop></audio>
       <button id="playFireworksBtn">
         <i class="fa-solid fa-volume-high fa-2x" id="audioIconPlay"></i>
@@ -63,7 +65,7 @@
               <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
                 <span data-view="flip"></span>
               </div>
-              <!-- <span data-key="label" data-view="text" class="tick-label"></span> -->
+              <span data-key="label" data-view="text" class="tick-label"></span>
             </div>
           </div>
         </div>
@@ -78,10 +80,6 @@
     <!-- end hero section -->
     
     <!-- start  section -->
-    <section class="" style="text-align: center;">
-      <img src="./assets/imgs/logo.png" alt="" style="max-width: 100%;">
-      <h2 style="margin-top: 20px;">لسه مخلصناش هنكمل ان شاء الله قريب جدا</h2>
-    </section>
     <!-- end  section -->
   </main>
 
@@ -91,7 +89,7 @@
   <script src="./assets/js/counter.js"></script>
   <script src="./assets/js/flip.min.js"></script>
   <script src="./assets/js/buttons.js"></script>
-  <script type="text/javascript" src="./assets/js/fireworks.js"></script>
+  <script src="./assets/js/fireworks.js"></script>
 </body>
 
 </html>

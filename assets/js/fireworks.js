@@ -1,21 +1,29 @@
 const fireworksAudio = document.querySelector('#fireworksAudio');
 const playFireworksBtn = document.querySelector('#playFireworksBtn');
 const muteFireworksBtn = document.querySelector('#muteFireworksBtn');
+const stopFireworksBtn = document.querySelector('#stopFireworksBtn');
+const startFireworksBtn = document.querySelector('#startFireworksBtn');
 
 playFireworksBtn.style.display = 'block';
 muteFireworksBtn.style.display = 'none';
+startFireworksBtn.style.display = 'block';
+stopFireworksBtn.style.display = 'none';
+playFireworksBtn.setAttribute('disabled', 'disabled');
 
-playFireworksBtn.addEventListener('click', () => {
+playFireworksBtn.addEventListener('click', startFireworksSound);
+muteFireworksBtn.addEventListener('click', stopFireworksSound);
+
+function startFireworksSound() {
   playFireworksBtn.style.display = 'none';
   muteFireworksBtn.style.display = 'block';
   fireworksAudio.play();
-});
+}
 
-muteFireworksBtn.addEventListener('click', () => {
+function stopFireworksSound() {
   muteFireworksBtn.style.display = 'none';
   playFireworksBtn.style.display = 'block';
   fireworksAudio.pause();
-});
+}
 
 var c = document.getElementById("Canvas");
 var ctx = c.getContext("2d");
@@ -23,6 +31,7 @@ var ctx = c.getContext("2d");
 var cwidth, cheight;
 var shells = [];
 var pass = [];
+var animationId;
 
 var colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41', '#FFFF00', '#FFD740', '#FFAB40', '#FF6E40'];
 
@@ -31,7 +40,6 @@ window.onresize = () => reset();
 reset();
 
 function reset() {
-
   cwidth = window.innerWidth;
   cheight = window.innerHeight;
   c.width = cwidth;
@@ -39,7 +47,6 @@ function reset() {
 }
 
 function newShell() {
-
   var left = (Math.random() > 0.5);
   var shell = {};
   shell.x = (1 * left);
@@ -53,11 +60,9 @@ function newShell() {
 }
 
 function newPass(shell) {
-
   var pasCount = Math.ceil(Math.pow(shell.size, 2) * Math.PI);
 
   for (i = 0; i < pasCount; i++) {
-
     var pas = {};
     pas.x = shell.x * cwidth;
     pas.y = shell.y * cheight;
@@ -76,9 +81,7 @@ function newPass(shell) {
 }
 
 var lastRun = 0;
-Run();
 function Run() {
-
   var dt = 1;
   if (lastRun != 0) { dt = Math.min(50, (performance.now() - lastRun)); }
   lastRun = performance.now();
@@ -90,7 +93,6 @@ function Run() {
   if ((shells.length < 10) && (Math.random() > 0.96)) { newShell(); }
 
   for (let ix in shells) {
-
     var shell = shells[ix];
 
     ctx.beginPath();
@@ -110,7 +112,6 @@ function Run() {
   }
 
   for (let ix in pass) {
-
     var pas = pass[ix];
 
     ctx.beginPath();
@@ -128,5 +129,28 @@ function Run() {
       pass.splice(ix, 1);
     }
   }
-  requestAnimationFrame(Run);
+  animationId = requestAnimationFrame(Run);
 }
+
+function stopAnimation() {
+  cancelAnimationFrame(animationId);
+  ctx.clearRect(0, 0, cwidth, cheight);
+  shells = [];
+  pass = [];
+}
+
+stopFireworksBtn.addEventListener('click', () => {
+  stopFireworksBtn.style.display = 'none';
+  startFireworksBtn.style.display = 'block';
+  stopAnimation();
+  stopFireworksSound();
+  playFireworksBtn.setAttribute('disabled', 'disabled');
+});
+
+startFireworksBtn.addEventListener('click', () => {
+  startFireworksBtn.style.display = 'none';
+  stopFireworksBtn.style.display = 'block';
+  Run();
+  startFireworksSound();
+  playFireworksBtn.removeAttribute('disabled');
+});
