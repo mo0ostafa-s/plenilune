@@ -123,6 +123,14 @@
   <script src="./assets/js/flip.min.js"></script>
   <script src="./assets/js/buttons.js"></script>
   <script src="./assets/js/fireworks.js"></script>
+  <script>
+    const msgCovers = document.querySelectorAll('.message-cover');
+    msgCovers.forEach(msgCover => {
+      msgCover.addEventListener('click', () => {
+        msgCover.style.animationName = 'unboxing';
+      });
+    });
+  </script>
 </body>
 
 </html>

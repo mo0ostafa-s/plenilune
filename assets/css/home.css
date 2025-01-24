@@ -94,12 +94,9 @@ section.about .gift-box .message-cover {
   background-color: #ffce00;
   border-radius: 25px;
   z-index: 1;
-}
-
-section.about .gift-box:hover .message-cover {
-  animation-name: unboxing;
-  animation-duration: 3s;
+  animation-duration: 10s;
   animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes unboxing {
@@ -109,11 +106,15 @@ section.about .gift-box:hover .message-cover {
   5% {
     transform: skewX(5deg) translate(0, 0);
   }
-  25% {
+  15% {
     transform: skewX(5deg) translate(-40px, 20px);
   }
-  60% {
+  40% {
     transform: skewX(5deg) translate(-40px, 500px);
+    z-index: -1;
+  }
+  50% {
+    transform: skewX(5deg) translate(-40px, 900px);
     z-index: -1;
   }
   100% {
